@@ -17,5 +17,14 @@ public class Livre implements Serializable {
     @GeneratedValue(strategy=GenerationType.TABLE)
     private Long id;
     private String titre;
+    @ManyToOne
+    private Genre genre;
+    private String photoName;
+
+    @ManyToOne
+    private Auteur auteur;
+
+
+
 
 }

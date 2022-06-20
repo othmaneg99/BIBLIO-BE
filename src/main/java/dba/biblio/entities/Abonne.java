@@ -1,20 +1,23 @@
 package dba.biblio.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import dba.biblio.enums.UserRoles;
+import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
+import javax.persistence.*;
+import java.util.Collection;
+import java.util.Collections;
+
+@Getter
+@Setter
+@EqualsAndHashCode
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+
+
 public class Abonne {
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
@@ -22,4 +25,15 @@ public class Abonne {
     private String nom;
     private String prenom;
     private String adresse;
+    private String username;
+    private String email;
+    private String password;
+    @Enumerated(EnumType.STRING)
+    private UserRoles userRoles = UserRoles.USER;
+    private Boolean enabled;
+    private Boolean locked;
+
+
 }
+
+
