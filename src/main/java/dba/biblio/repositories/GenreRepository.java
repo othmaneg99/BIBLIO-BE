@@ -13,4 +13,6 @@ public interface GenreRepository extends JpaRepository<Genre,Long> {
 
     @Override
     List<Genre> findAll();
+
+    Genre save(Genre genre);
 }
