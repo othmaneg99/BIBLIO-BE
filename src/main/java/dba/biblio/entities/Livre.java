@@ -20,9 +20,18 @@ public class Livre implements Serializable {
     @ManyToOne
     private Genre genre;
     private String photoName;
+    private int quantite = 0;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Auteur auteur;
 
     @ManyToOne
-    private Auteur auteur;
+    private Editeur editeur;
+
+    @ManyToOne
+    private Rayon rayon;
+
+
 
 
 

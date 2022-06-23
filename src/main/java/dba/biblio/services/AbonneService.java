@@ -4,6 +4,7 @@ import dba.biblio.entities.Abonne;
 import dba.biblio.repositories.AbonneRepository;
 import lombok.AllArgsConstructor;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -11,13 +12,6 @@ import org.springframework.stereotype.Service;
 public class AbonneService  {
     private final static String USER_NOT_FOUND_MSG = "Cet utilisateur n'existe pas";
 
-
-    private final AbonneRepository abonneRepository;
-
-    public  Abonne saveAbonne(Abonne abonne){
-
-        return abonneRepository.save(abonne);
-    }
 
 
 }

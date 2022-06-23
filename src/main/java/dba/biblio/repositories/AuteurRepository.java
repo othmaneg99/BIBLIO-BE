@@ -1,8 +1,9 @@
 package dba.biblio.repositories;
 
-import dba.biblio.entities.Genre;
+import dba.biblio.entities.Auteur;
 import dba.biblio.entities.Livre;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
@@ -10,11 +11,7 @@ import java.util.List;
 
 @Repository
 @CrossOrigin
-public interface GenreRepository extends JpaRepository<Genre,Long> {
+public interface AuteurRepository extends JpaRepository<Auteur,Long> {
 
-    @Override
-    List<Genre> findAll();
-
-    Genre save(Genre genre);
 
 }

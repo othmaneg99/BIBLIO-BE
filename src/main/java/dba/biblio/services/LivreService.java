@@ -17,26 +17,4 @@ import java.util.Optional;
 @Service
 public class LivreService {
 
-    @Autowired
-    private LivreRepository livreRepository;
-
-    public Page<Livre> getAll(String criteria, Pageable pageable) {
-        return livreRepository.findAll(Specification.where(LivreSpecification.findBy("titre", criteria))
-                .or(LivreSpecification.findBy("genre", criteria)), pageable);
-
-    }
-
-    public Optional<Livre> findById(Long id) {
-        return livreRepository.findById(id);
-    }
-
-    public void save(Livre livre) {
-        livreRepository.save(livre);
-    }
-
-    public void update(Livre livre) throws Exception {
-        if (!findById(livre.getId()).isPresent())
-            throw new Exception("Livre not found");
-        livreRepository.save(livre);
-    }
 }

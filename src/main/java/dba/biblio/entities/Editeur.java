@@ -3,9 +3,11 @@ package dba.biblio.entities;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.OneToMany;
 import java.util.Collection;
-
 
 @Setter
 @EqualsAndHashCode
@@ -14,13 +16,13 @@ import java.util.Collection;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Auteur {
+public class Editeur {
     @javax.persistence.Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
-    private Long Id;
-    private String prenom;
-    private String nom;
-    @OneToMany(mappedBy = "auteur", fetch= FetchType.LAZY)
+    @GeneratedValue(strategy= GenerationType.TABLE)
+    private Long id;
+    private String libelle;
+
+    @OneToMany(mappedBy = "editeur")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Collection<Livre> livres;
 }

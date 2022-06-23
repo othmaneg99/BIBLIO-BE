@@ -21,7 +21,7 @@ public class AbonneController {
     @PostMapping("/register")
     public Abonne saveAbonne(@RequestBody Abonne abonne){
 
-        return abonneService.saveAbonne(abonne);
+        return abonneRepository.save(abonne);
     }
     @Autowired
 
